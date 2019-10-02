@@ -11,9 +11,9 @@ import java.sql.SQLException;
  */
 public class StartUpDatabaseDAO {
 
-    private static final String CREATE_PERSON = "CREATE TABLE PERSON(ID int auto_increment primary key," +
+    private static final String CREATE_PERSON = "CREATE TABLE IF NOT EXISTS PERSON(ID int auto_increment primary key," +
             " NAME varchar(100), SURNAME varchar(100))";
-    private static final String CREATE_ACCOUNT = "CREATE TABLE ACCOUNT(ID int auto_increment primary key, " +
+    private static final String CREATE_ACCOUNT = "CREATE TABLE IF NOT EXISTS ACCOUNT(ID int auto_increment primary key, " +
             "PERSON_ID int, BALANCE numeric(8,2), CURRENCY varchar(100),foreign key (PERSON_ID) references PERSON)";
     private final TransactionalBlockingConnectionPool pool;
 

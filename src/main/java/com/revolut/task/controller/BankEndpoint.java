@@ -1,6 +1,8 @@
 package com.revolut.task.controller;
 
+import com.revolut.task.connection_pool.TransactionalBlockingConnectionPool;
 import com.revolut.task.dao.AccountDAO;
+import com.revolut.task.dao.AllAccountsDAO;
 import com.revolut.task.dto.AccountDTO;
 import com.revolut.task.dto.TransactionDTO;
 import com.revolut.task.exception.UserNotFoundException;
@@ -9,13 +11,16 @@ import com.revolut.task.model.Account;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 import java.util.Optional;
 
 /**
  * <p>Endpoint to manage bank operations</p>
  */
 @Path("bank")
-public class BankEndpoint extends BaseEndpoint {
+public class BankEndpoint {
+
+    private final TransactionalBlockingConnectionPool connectionPool = TransactionalBlockingConnectionPool.getInstance();
 
     @POST
     @Path("/transaction")
@@ -53,5 +58,20 @@ public class BankEndpoint extends BaseEndpoint {
     public Account account(@QueryParam("id") Long accountId) {
         Optional<Account> account = new AccountDAO.Identified(accountId, connectionPool).get();
         return account.orElseThrow(UserNotFoundException::new);
+    }
+
+    @GET
+    @Path("/close")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Boolean closeAccount(@QueryParam("id") Long accountId) {
+        return new AccountDAO.Identified(accountId, connectionPool).delete();
+    }
+
+    @GET
+    @Path("/all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Account> allAccouts() {
+        Optional<List<Account>> accounts = new AllAccountsDAO(connectionPool).get();
+        return accounts.orElse(null);
     }
 }

@@ -20,7 +20,7 @@ public class TransactionalBlockingConnectionPool {
     private ThreadLocal<Connection> threadLocal;
     private int size;
 
-    public TransactionalBlockingConnectionPool() {
+    private TransactionalBlockingConnectionPool() {
         this.size = DEFAULT_SIZE;
         this.semaphore = new Semaphore(DEFAULT_SIZE);
         this.threadLocal = new ThreadLocal<>();
@@ -32,7 +32,7 @@ public class TransactionalBlockingConnectionPool {
         }
     }
 
-    public TransactionalBlockingConnectionPool(int poolSize, String propertiesFilePath) {
+    private TransactionalBlockingConnectionPool(int poolSize, String propertiesFilePath) {
         this.size = poolSize;
         this.semaphore = new Semaphore(poolSize);
         this.threadLocal = new ThreadLocal<>();
@@ -126,5 +126,22 @@ public class TransactionalBlockingConnectionPool {
         } catch (SQLException e) {
             throw new ConnectionPoolDAOException("Failed to create new connection to H2 database", e);
         }
+    }
+
+    public static TransactionalBlockingConnectionPool getInstance() {
+        return SingletonConnectionPoolHolder.INSTANCE;
+    }
+
+    public static TransactionalBlockingConnectionPool getTestInstance() {
+        return SingletonTestConnectionPoolHolder.INSTANCE;
+    }
+
+    public static class SingletonConnectionPoolHolder {
+        static final TransactionalBlockingConnectionPool INSTANCE = new TransactionalBlockingConnectionPool();
+    }
+
+    public static class SingletonTestConnectionPoolHolder {
+        static final TransactionalBlockingConnectionPool INSTANCE =
+                new TransactionalBlockingConnectionPool(5, "db_connection_test.properties");
     }
 }

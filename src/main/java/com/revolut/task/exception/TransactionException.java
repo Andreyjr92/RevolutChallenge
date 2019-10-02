@@ -8,7 +8,7 @@ public class TransactionException extends ClientMessageException {
         super(message);
     }
 
-    public TransactionException(String message, Throwable cause) {
-        super(message, cause);
+    public TransactionException() {
+        super(ERROR_MESSAGE);
     }
 }

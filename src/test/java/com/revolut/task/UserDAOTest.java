@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import static org.junit.Assert.*;
 
-public class UserDAOTest extends BasicTest {
+public class UserDAOTest extends BaseTest {
 
     @Test
     public void getUserByName() {
@@ -37,6 +37,15 @@ public class UserDAOTest extends BasicTest {
     }
 
     @Test
+    public void noUserById() {
+        Optional<User> user1Opt = new UserDAO.Identified(500L, connectionPool).get();
+        Optional<User> user2Opt = new UserDAO.Identified(125L, connectionPool).get();
+
+        assertFalse(user1Opt.isPresent());
+        assertFalse(user2Opt.isPresent());
+    }
+
+    @Test
     public void noUser() {
         Optional<User> userOpt = new UserDAO(
                 new User("Andrey", "Arshavin"), connectionPool
@@ -57,6 +66,5 @@ public class UserDAOTest extends BasicTest {
         Optional<User> userOpt = userDAO.get();
 
         assertTrue(userOpt.isPresent());
-        assertEquals(userOpt.get().getId(), new Long(5));
     }
 }

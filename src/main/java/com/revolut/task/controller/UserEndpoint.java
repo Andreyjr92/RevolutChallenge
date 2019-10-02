@@ -1,5 +1,6 @@
 package com.revolut.task.controller;
 
+import com.revolut.task.connection_pool.TransactionalBlockingConnectionPool;
 import com.revolut.task.dao.UserDAO;
 import com.revolut.task.dto.PersonDTO;
 import com.revolut.task.exception.UserNotFoundException;
@@ -13,7 +14,9 @@ import java.util.Optional;
  * <p>Endpoint to manage bank account holder</p>
  */
 @Path("user")
-public class UserEndpoint extends BaseEndpoint {
+public class UserEndpoint {
+
+    private final TransactionalBlockingConnectionPool connectionPool = TransactionalBlockingConnectionPool.getInstance();
 
     @POST
     @Path("/new")

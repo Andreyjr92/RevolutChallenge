@@ -2,7 +2,7 @@ package com.revolut.task.model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
+import java.util.StringJoiner;
 
 public class User {
     protected Long id;
@@ -62,14 +62,28 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         User user = (User) o;
-        return id.equals(user.id) &&
-                name.equals(user.name) &&
-                surname.equals(user.surname);
+
+        if (id != null ? !id.equals(user.id) : user.id != null) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        return surname != null ? surname.equals(user.surname) : user.surname == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname);
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (surname != null ? surname.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("name='" + name + "'")
+                .add("surname='" + surname + "'")
+                .toString();
     }
 }

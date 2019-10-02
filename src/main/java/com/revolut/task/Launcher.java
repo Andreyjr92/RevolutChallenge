@@ -10,7 +10,7 @@ import org.eclipse.jetty.server.Server;
  */
 public class Launcher {
 
-    private final TransactionalBlockingConnectionPool connectionPool = new TransactionalBlockingConnectionPool();
+    private final TransactionalBlockingConnectionPool connectionPool = TransactionalBlockingConnectionPool.getInstance();
 
     public static void main(String[] args) {
         try {

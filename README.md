@@ -78,6 +78,33 @@ No any servlet containers needed to boot an application;
     "currency": "RUB"
 }
 ```
+- GET request, url: */bank/all* - retrieves all accounts from database 
+```json
+[
+    {
+        "id": 1,
+        "user": {
+            "id": 1,
+            "name": "Donald",
+            "surname": "Tramp"
+        },
+        "balance": 700.5,
+        "currency": "RUB"
+    },
+    {
+        "id": 2,
+        "user": {
+            "id": 2,
+            "name": "Vladimir",
+            "surname": "Putin"
+        },
+        "balance": 1449.5,
+        "currency": "RUB"
+    }
+]
+```
+
+- GET request, url: */bank/close?id=1* - delete account from database by id 
 ___
 
 _by Andrey Zakhryamin,_

@@ -1,6 +1,7 @@
 package com.revolut.task.dao;
 
 import com.revolut.task.connection_pool.TransactionalBlockingConnectionPool;
+import com.revolut.task.exception.AccountOwnerIsNotPresent;
 import com.revolut.task.exception.TransactionException;
 import com.revolut.task.model.Account;
 import com.revolut.task.model.User;
@@ -33,7 +34,7 @@ public class AccountDAO extends Account {
         this.pool = pool;
     }
 
-    public void withdraw(Double amount, String currency) throws TransactionException {
+    public void withdraw(Double amount, String currency) {
         amountChangeLock.lock();
         try {
             checkAccountCurrency(currency);
@@ -73,7 +74,7 @@ public class AccountDAO extends Account {
     private void checkAccountCurrency(String currency) {
         if (!this.currency.equalsIgnoreCase(currency)) {
             throw new TransactionException("Unable to submit transaction. Account currency is " +
-                    this.currency + "your transaction currency is" + this.currency);
+                    this.currency + ", your transaction currency is " + currency);
         }
     }
 
@@ -118,17 +119,35 @@ public class AccountDAO extends Account {
     }
 
     /**
-     * Identified account. Allows to obtain instance of {@link Account}by known;
+     * <p>Identified account. Allows to obtain instance of {@link Account} by known id</p>
      */
     public static class Identified {
 
         private static final String SELECT_QUERY = "SELECT * FROM ACCOUNT WHERE ID = ?";
+        private static final String DELETE_QUERY = "DELETE FROM ACCOUNT WHERE ID = ?";
         private final Long accountId;
         private final TransactionalBlockingConnectionPool pool;
 
         public Identified(Long accountId, TransactionalBlockingConnectionPool pool) {
             this.accountId = accountId;
             this.pool = pool;
+        }
+
+        public boolean delete() {
+            if (accountId == null) {
+                return false;
+            }
+            Connection connection = pool.getConnection();
+            try (PreparedStatement deleteAccountPs = connection.prepareStatement(DELETE_QUERY)) {
+                deleteAccountPs.setLong(1, accountId);
+                deleteAccountPs.executeUpdate();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                pool.putConnectionBack(connection);
+            }
+            return false;
         }
 
         public Optional<Account> get() {
@@ -148,7 +167,7 @@ public class AccountDAO extends Account {
                 double balance = resultSet.getDouble("balance");
                 String currency = resultSet.getString("currency");
                 if (!accountOwnerOpt.isPresent()) {
-                    throw new RuntimeException();
+                    throw new AccountOwnerIsNotPresent();
                 }
                 User accountOwner = accountOwnerOpt.get();
                 Account account = new Account(id, accountOwner, balance, currency);
