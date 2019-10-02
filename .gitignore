@@ -1,0 +1,8 @@
+.idea/
+compiler.xml
+workspace.xml
+/target/
+/logs/
+/db*
+mywallet.iml
+.gitignore

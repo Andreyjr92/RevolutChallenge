@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8f82a35d-ce3b-4cd1-a074-c172795f7d25" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/revolut/task/AccountDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/revolut/task/UserDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/revolut/task/simulation/AccountDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/controller/BankEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/controller/BankEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/dao/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/dao/AccountDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/dao/StartUpDatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/dao/StartUpDatabaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/dto/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/dto/PersonDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/dto/PersonDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/dto/TransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/dto/TransactionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/task/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/task/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revolut/task/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/revolut/task/BasicTest.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="prodDb" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="prodDb" type="feb32156:DbDataSourceImpl" />
+        <item name="PRODDB: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="prodDb" type="feb32156:DbDataSourceImpl" />
+        <item name="PRODDB: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="prodDb" type="feb32156:DbDataSourceImpl" />
+        <item name="PRODDB: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="ACCOUNT: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="prodDb" type="feb32156:DbDataSourceImpl" />
+        <item name="PRODDB: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="PERSON: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="testDb" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="testDb" type="feb32156:DbDataSourceImpl" />
+        <item name="testdb: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="testDb" type="feb32156:DbDataSourceImpl" />
+        <item name="testdb: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="public: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="Andreyjr92" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="online_wallet" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\andre\IdeaProjects\mywallet\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
+  </component>
+  <component name="ProjectId" id="1RAJNkTTeiYV1sEczfaFPVsRESy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore&#10;C:/Users/a.zakhryamin/IdeaProjects/LightweightWallet/db_connection.properties&#10;C:/Users/a.zakhryamin/IdeaProjects/LightweightWallet/db_connection_prop.properties" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569968367594" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="H2" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.3413793" />
+  </component>
+  <component name="RecentsManager">
+    <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="com.revolut.task.dao.StartUpDatabaseDAO" />
+      <recent name="com.revolut.task.dao.AccountDAO" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.revolut.task" />
+      <recent name="" />
+      <recent name="launch" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\a.zakhryamin\IdeaProjects\ConcurrentLightWeightWallet\src\test\resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="launch.service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\a.zakhryamin\IdeaProjects\ConcurrentLightWeightWallet\src\test" />
+      <recent name="C:\Users\a.zakhryamin\IdeaProjects\ConcurrentLightWeightWallet\src\test\java" />
+      <recent name="C:\Users\a.zakhryamin\IdeaProjects\LightweightWallet\src\main\resources" />
+      <recent name="C:\Users\andre\IdeaProjects\mywallet\src\main" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.UserDAOTest.getUserById">
+    <configuration name="TransactionTest.transactionNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConcurrentLightWeightWallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revolut.task.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.task" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.task.TransactionTest" />
+      <option name="METHOD_NAME" value="transactionNegative" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConcurrentLightWeightWallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revolut.task.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.task" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.task.UserDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAOTest.getUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConcurrentLightWeightWallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revolut.task.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.task" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.task.UserDAOTest" />
+      <option name="METHOD_NAME" value="getUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAOTest.getUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConcurrentLightWeightWallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revolut.task.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.task" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.task.UserDAOTest" />
+      <option name="METHOD_NAME" value="getUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAOTest.newUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConcurrentLightWeightWallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revolut.task.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revolut.task" />
+      <option name="MAIN_CLASS_NAME" value="com.revolut.task.UserDAOTest" />
+      <option name="METHOD_NAME" value="newUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.TransactionTest.transactionNegative" />
+      <item itemvalue="JUnit.UserDAOTest.getUser" />
+      <item itemvalue="JUnit.UserDAOTest" />
+      <item itemvalue="JUnit.UserDAOTest.newUser" />
+      <item itemvalue="JUnit.UserDAOTest.getUserById" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserDAOTest.getUserById" />
+        <item itemvalue="JUnit.UserDAOTest" />
+        <item itemvalue="JUnit.UserDAOTest.newUser" />
+        <item itemvalue="JUnit.UserDAOTest.getUser" />
+        <item itemvalue="JUnit.TransactionTest.transactionNegative" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f82a35d-ce3b-4cd1-a074-c172795f7d25" name="Default Changelist" comment="" />
+      <created>1569103929468</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569103929468</updated>
+      <workItem from="1569103934841" duration="2747000" />
+      <workItem from="1569109629092" duration="4430000" />
+      <workItem from="1569254648834" duration="6180000" />
+      <workItem from="1569263717773" duration="2654000" />
+      <workItem from="1569277177247" duration="5125000" />
+      <workItem from="1569668689789" duration="5141000" />
+      <workItem from="1569785066211" duration="7473000" />
+      <workItem from="1569797867492" duration="861000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1569252126885</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569252126885</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <created>1569252235303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569252235303</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init">
+      <created>1569254781217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569254781217</updated>
+    </task>
+    <task id="LOCAL-00004" summary="init">
+      <created>1569669082918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569669082918</updated>
+    </task>
+    <task id="LOCAL-00005" summary="transaction logic added">
+      <created>1569797454846</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569797454846</updated>
+    </task>
+    <task id="LOCAL-00006" summary="main login finished, first test added">
+      <created>1569867226414</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1569867226414</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="transaction logic added" />
+    <MESSAGE value="main login finished, first test added" />
+    <option name="LAST_COMMIT_MESSAGE" value="main login finished, first test added" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/revolut/task/dto/PersonDTO.java</url>
+          <line>4</line>
+          <properties field="surname" class="com.revolut.task.dto.PersonDTO" />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>LightweightWallet:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>LightweightWallet</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3413793" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.h2database:h2:1.4.199</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3413793" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
