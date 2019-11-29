@@ -10,7 +10,7 @@
     <url>https://github.com/Andreyjr92</url>
 
     <properties>
-        <jetty.version>9.4.7.v20170914</jetty.version>
+        <jetty.version>9.4.24.v20191120</jetty.version>
         <jersey.version>2.26</jersey.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
